@@ -1,0 +1,26 @@
+@import '../../../sass/variables';
+.navigation {   
+    height: 10vh;
+    background-color:rgba($nav-color,.5);
+    &__list{
+        width: 100%;
+        height: 100%;
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+        grid-column-gap:2rem;
+        align-items: center;
+        justify-items: center;
+        transition:all .5s;
+    }
+    &__item{
+        color:white;
+        list-style-type: none;
+        cursor: pointer;
+        font-size:2rem;
+        transition:all .5s;
+        &:hover {
+            border-bottom:1px solid orangered;
+            font-size:2.5rem;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../../sass/base';
+@import '../../../sass/animations';
+@import '../../../sass/variables';
+.visitation {
+    &__background {
+        max-height:90vh;
+        max-width: 100vw;
+        position: absolute;
+        left:0;
+        top:10vh;
+        overflow: hidden;
+        opacity: .5;    
+        object-fit: cover;
+        z-index: -150;
+        &--video {
+            width:100%;
+            height:100%;
+        }
+    }
+    &__title {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: center;
+        grid-row-gap: 5rem;
+        justify-items: center;
+        text-transform: uppercase;
+        animation: pageStart 1.5s ease-out forwards;
+        z-index:20;
+    }
+    &__login--button {
+        background-image: linear-gradient(to right bottom,rgba($color-light-1,.8),rgba($color-dark-1,.8));
+        margin:0 auto;
+        display: block;
+        margin-top:25vh;
+        font-size:2.5rem;
+        color:#dbdbff;
+        padding:2rem;
+        text-transform: uppercase;
+        border-radius: 10rem;
+        border:none;
+ 
+        cursor: pointer;
+        &:hover {
+            animation:loginButtonAnimate 1s linear forwards;
+            
+        }
+    }
+}

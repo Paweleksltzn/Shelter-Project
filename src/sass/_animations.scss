@@ -1,0 +1,34 @@
+
+@keyframes pageStart {
+    0% {
+        margin-top:-100vh;
+        opacity:0;
+    }
+    20% {
+        margin-top:-50vh;
+        opacity:.2;
+    }
+    70% {
+        margin-top:80vh;
+        opacity:.5;
+    }
+    90% {
+        margin-top:10vh;
+        opacity:.7;
+    }
+    100% {
+        margin-top:20vh;
+        opacity:1;
+    }
+}
+@keyframes loginButtonAnimate {
+    10% {
+       padding:4rem;
+    }
+    50% {
+        padding:1rem;
+    }
+    100% {
+        padding:2rem;
+    }
+}

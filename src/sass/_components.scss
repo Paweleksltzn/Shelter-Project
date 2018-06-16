@@ -1,0 +1,21 @@
+.heading {
+    &-primary {
+        font-size:6rem;
+        //color:rgba($color-primary,1);
+        background-image: linear-gradient(to right top, rgba($color-primary,.9),rgba($color-secondary,.9));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color:transparent;
+        letter-spacing: 1rem;
+    }
+    &-secondary {
+        font-size:3rem;
+        background-image: linear-gradient(to left bottom, rgba($color-primary,.9),rgba($color-secondary,.9));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color:transparent;
+        letter-spacing: .3rem;
+        transform: skewX(-20deg);
+    }
+    
+}
