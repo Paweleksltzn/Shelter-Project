@@ -17,5 +17,38 @@
         letter-spacing: .3rem;
         transform: skewX(-20deg);
     }
-    
+    &-tertiary {
+        font-size:5rem;
+        color:$color-tertiary;
+        transition: all .8s;
+        width:min-content;
+        margin:0 auto;
+        &:hover {
+            color:rgba($color-tertiary-hover,.8);
+            text-shadow: 7px -3px 30px rgba(150, 140, 150, 1);
+        }
+    }
+}
+.visitation__login--button,
+.registration__submit {
+    background-image: linear-gradient(to right bottom,rgba($color-light-1,.8),rgba($color-dark-1,.8));
+    margin:0 auto;
+    display: block;
+    margin-top:25vh;
+    font-size:2.5rem;
+    color:#dbdbff;
+    padding:2rem;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    border:none;
+    opacity: 1;
+    cursor: pointer;
+    &:hover {
+        animation:loginButtonAnimate 1s linear forwards;
+        
+    }
+}
+.registration__submit {
+    margin-top:10%;
+    width:50%;
 }
