@@ -10,7 +10,8 @@
       <h1 class="heading-primary">Centrum pomocy </h1>
       <h2 class="heading-secondary">zwierzętom oraz schroniskom</h2>
     </div>
-    <button class="visitation__login--button" (click)="login('register')">Stwórz konto</button>
+    <button class="visitation__login--button" (click)="login('register')" *ngIf="!authenticated">Stwórz konto</button>
+    <button class="visitation__login--button" (click)="login('register')" *ngIf="authenticated">Wspomórz nas</button>
   </div>
 </header>
 <section class="shelters"> 

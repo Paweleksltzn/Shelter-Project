@@ -2,18 +2,22 @@
 <div class="registration">
  <div class="registration__header"> <h3 class="heading-tertiary">{{mode === 'register' ? 'Rejestracja' : 'Logowanie'}}</h3></div>
   <form  class="registration__form" #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <div class="registration__item">
+    <div class="registration__item" [ngClass]="{'margin-bottom': !email.valid && email.touched}">
         <label for="email" class="registration__label">Adres Email</label>
         <input type="text" class="registration__input" name="email" placeholder="jan.kowalski@gmail.com" ngModel #email='ngModel' required email>
+        <p *ngIf="!email.valid && email.touched" class="invalid-form-clue">Wpisz poprawny adres email</p>
     </div>
-    <div class="registration__item" *ngIf="mode === 'register'">
+    <div class="registration__item" *ngIf="mode === 'register'" [ngClass]="{'margin-bottom': !username.valid && username.touched}">
       <label for="username" class="registration__label">Nazwa użytkownika</label>
       <input type="text" class="registration__input" name="username" placeholder="Janek" ngModel #username="ngModel" required>
+      <p *ngIf="!username.valid && username.touched" class="invalid-form-clue">Nazwa użytkownika jest wymagana</p>
   </div>
     <div class="registration__item">
         <label for="password" class="registration__label">Hasło</label>
-        <input type="password" class="registration__input" name="password" placeholder="aZsX1@3$" ngModel #password="ngModel" required >
-    </div>
-    <button class="registration__submit" type="submit">{{mode === 'register' ? 'Zarejestrój' : 'Zalogój'}}</button>
+        <input type="password" class="registration__input" name="password" placeholder="aZsX1@3$" ngModel #password="ngModel" required min-length="8">
+        <p *ngIf="!password.valid && password.touched" class="invalid-form-clue">Hasło musi posiadać conajmniej 8 znaków</p>
+      </div>
+      <p class="invalid-form-clue" *ngIf="logAttempt">{{logErrorMessage}}</p>
+    <button class="registration__submit" type="submit" [ngClass]="{'registration__submit--disabled': !form.valid}" [disabled]="!form.valid">{{mode === 'register' ? 'Zarejestrój' : 'Zalogój'}}</button>
   </form>
 </div>

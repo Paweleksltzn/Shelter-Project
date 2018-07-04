@@ -3,6 +3,7 @@
   <ul class="navigation__list">
     <li class="navigation__item" routerLink="/">Strona główna</li>
     <li class="navigation__item">Ogłoszenia</li>
-    <li class="navigation__item" (click)="register('sign')" *ngIf="ifLogginPage !== 'sign' && ifLogginPage !=='register'">Zaloguj się</li> 
+    <li class="navigation__item" (click)="register('sign')" *ngIf="ifLogginPage !== 'sign' && ifLogginPage !=='register' && !authenticated">Zaloguj się</li> 
+    <li class="navigation__item" (click)="logOut()" *ngIf="authenticated">Wyloguj</li>
   </ul>
 </div>

@@ -5,7 +5,7 @@ export interface SheltersStateInterface {
     editedShelterIndex: number;
     editedShelter: Shelter;
 }
-export const initialState: SheltersStateInterface = {
+const initialState: SheltersStateInterface = {
     Shelters : [],
     editedShelterIndex : -1,
     editedShelter : null

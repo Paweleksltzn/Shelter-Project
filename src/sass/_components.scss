@@ -34,7 +34,6 @@
     background-image: linear-gradient(to right bottom,rgba($color-light-1,.8),rgba($color-dark-1,.8));
     margin:0 auto;
     display: block;
-    margin-top:25vh;
     font-size:2.5rem;
     color:#dbdbff;
     padding:2rem;
@@ -50,5 +49,10 @@
 }
 .registration__submit {
     margin-top:10%;
-    width:50%;
+    max-width:50%;
+    min-width: min-content;
+    &--disabled {
+        opacity:.6;
+        animation: initial !important;
+    }
 }

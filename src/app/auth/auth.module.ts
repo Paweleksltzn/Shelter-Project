@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthRouting } from './auth-routing.module';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './ngrx/auth.reducer';
 
 @NgModule({
     imports: [
     CommonModule,
     AuthRouting,
-    FormsModule
+    FormsModule,
+    StoreModule.forFeature('auth', authReducer)
     ],
     declarations: [
         SignInComponent

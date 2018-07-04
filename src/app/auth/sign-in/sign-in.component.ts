@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,10 +9,17 @@ import { AuthService } from '../auth.service';
 })
 export class SignInComponent implements OnInit {
   mode: string;
-  constructor(private activeRoute: ActivatedRoute, private authSrv: AuthService) { }
+  logAttempt: boolean;
+  logErrorMessage: string;
+  constructor(private activeRoute: ActivatedRoute, private authSrv: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.logAttempt = false;
     this.mode = this.activeRoute.snapshot.queryParams['mode'];
+    this.authSrv.authTry.subscribe((message: string) => {
+      this.logAttempt = true;
+      this.logErrorMessage = message;
+    });
   }
   onSubmit(form) {
     const password = form.value.password;
@@ -23,5 +30,6 @@ export class SignInComponent implements OnInit {
     } else if (this.mode === 'sign') {
       this.authSrv.signIn(email, password);
     }
+    form.reset();
   }
 }

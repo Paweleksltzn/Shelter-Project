@@ -20,7 +20,7 @@
         position: absolute;
         left:50%;
         top:50%;
-        height:70%;
+        min-height:70%;
         width:30%;
         transform: translate(-50%,-50%);
         display: flex;
@@ -46,4 +46,20 @@
             border:2px solid grey;
         }
     }
+}
+.invalid-form-clue {
+    font-size:1.3rem;
+    text-align: center;
+    display: block;
+    margin-top:.5rem;
+    color:red;
+}
+.margin-bottom {
+    margin-bottom: 1.5rem;
+}
+input.ng-valid.ng-touched {
+    border:1px solid green;
+}
+input.ng-invalid.ng-touched {
+    border:1px solid red;
 }
